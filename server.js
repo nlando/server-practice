@@ -5,9 +5,14 @@ const express = require('express');
 //Object that holds all methods for the server
 const app = express();
 
-app.get('/', function(req, res){
-    response.send("Reporting live from the home page");
+app.get('/home', function(req, res){
+    res.render('home');
 });
+
+
+
+//sets page viewing to ejs
+app.set('view engine', 'ejs');
 
 //Designate where server will bind and listen
 app.listen(4000, function(){
